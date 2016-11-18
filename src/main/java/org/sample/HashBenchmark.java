@@ -10,8 +10,8 @@ import java.util.concurrent.TimeUnit;
 @Fork(value = 1, jvmArgsAppend = {"-Xms1024m", "-Xmx1024m", "-XX:+UseParNewGC", "-XX:+UseConcMarkSweepGC"})
 @Threads(1)
 @State(Scope.Thread)
-@Warmup(iterations = 1)
-@Measurement(iterations = 1)
+@Warmup(iterations = 100)
+@Measurement(iterations = 100)
 @Timeout(time = 5, timeUnit = TimeUnit.MINUTES)
 @OutputTimeUnit(TimeUnit.MILLISECONDS)
 public class HashBenchmark {
@@ -31,7 +31,7 @@ public class HashBenchmark {
             c += map.adjustOrPutValue(index, i, i);
         }
 
-        return c + map.size() + map.get(1);
+        return c + map.size() + map.get(1) + map.get(10001);
     }
 
 }

@@ -42,9 +42,9 @@ HashBenchmark.testMethod  1000000    ss  100  52.038 ± 2.636  ms/op
 ```
 
 ```
-real 11.24
-user 12.51
-sys 0.21
+real 10.76
+user 12.02
+sys 0.17
 ```
 
 # 1+1 iterations
