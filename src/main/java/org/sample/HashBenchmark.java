@@ -7,11 +7,11 @@ import org.openjdk.jmh.annotations.*;
 import java.util.concurrent.TimeUnit;
 
 @BenchmarkMode(Mode.SingleShotTime)
-@Fork(1)
+@Fork(value = 1, jvmArgsAppend = {"-Xms1024m", "-Xmx1024m", "-XX:+UseParNewGC", "-XX:+UseConcMarkSweepGC"})
 @Threads(1)
 @State(Scope.Thread)
-@Warmup(iterations = 100)
-@Measurement(iterations = 100)
+@Warmup(iterations = 1)
+@Measurement(iterations = 1)
 @Timeout(time = 5, timeUnit = TimeUnit.MINUTES)
 @OutputTimeUnit(TimeUnit.MILLISECONDS)
 public class HashBenchmark {
